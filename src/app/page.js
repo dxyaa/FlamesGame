@@ -11,8 +11,19 @@ export default function Home() {
         />
       </div>
       <div className="absolute inset-0 ">
-        <div className="flex items-center justify-center text-center text-white">
-          <div className="pt-10 text-4xl  font-custom">Flames!</div>
+        <div className="flex items-center justify-center text-center text-white flex-col w-full">
+          <div className="pt-10 text-9xl  font-custom">Flames</div>
+          <div className="flex items-center justify-center font-aesth text-lg pt-10 font-semibold w-full flex-col space-y-5">
+            <div className="flex flex-row w-full justify-center">
+              <p className="text-2xl ">Enter a name :</p>
+              <input className="p-1 ml-2 rounded-lg w-1/6" />
+            </div>
+            <div className="flex flex-row w-full justify-center">
+              {" "}
+              <p className="text-2xl ">Enter another name :</p>
+              <input className="p-1 ml-2 rounded-lg w-1/6" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
