@@ -28,42 +28,42 @@ export default function Home() {
 
   return (
     <div className="flex flex-col h-screen">
-      <div className="flex justify-end">
-        <div
-          className={`custom-toggle ${
-            mode === 1 ? "mode1" : mode === 2 ? "mode2" : "mode3"
-          }`}
-          onClick={toggleMode}
-        >
-          <button className="p-1 bg-white text-black rounded">theme</button>
-        </div>
-      </div>
-
       <div className="flex flex-1 items-center justify-center relative">
-        {/* Background image */}
         <Image
           src={bgImage}
           alt="bgImage"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center text-white flex-col w-full">
-          <div className="pt-10 text-9xl font-custom">Flames</div>
 
-          <div className="flex items-center justify-center font-aesth text-lg pt-10 font-semibold w-1/3 flex-col space-y-5 bg-green-100 bg-opacity-50 rounded-lg p-5">
-            {mode === 1 && (
-              <>
-                <div className="flex flex-row w-full justify-center">
-                  <p className="text-2xl">Enter name 1:</p>
-                  <input className="p-1 ml-2 rounded-lg w-2/3" />
-                </div>
-                <div className="flex flex-row w-full justify-center">
-                  <p className="text-2xl">Enter name 2:</p>
-                  <input className="p-1 ml-2 rounded-lg w-2/3" />
-                </div>
-              </>
-            )}
-            {mode === 2 && <div className="text-2xl">Content for mode 2</div>}
-            {mode === 3 && <div className="text-2xl">Content for mode 3</div>}
+        <div className="absolute inset-0 ">
+          <div className="flex justify-end p-4">
+            <div
+              className={`custom-toggle ${
+                mode === 1 ? "mode1" : mode === 2 ? "mode2" : "mode3"
+              }`}
+              onClick={toggleMode}
+            >
+              <button className="p-1 bg-white text-black rounded">theme</button>
+            </div>
+          </div>{" "}
+          <div className="flex items-center justify-center text-white flex-col w-full">
+            <div className="pt-10 text-9xl font-custom">Flames</div>
+            <div className="flex items-center justify-center font-aesth text-lg pt-10 font-semibold w-1/3 flex-col space-y-5 bg-green-100 bg-opacity-50 rounded-lg p-5">
+              {mode === 1 && (
+                <>
+                  <div className="flex flex-row w-full justify-center">
+                    <p className="text-2xl">Enter name 1:</p>
+                    <input className="p-1 ml-2 rounded-lg w-2/3" />
+                  </div>
+                  <div className="flex flex-row w-full justify-center">
+                    <p className="text-2xl">Enter name 2:</p>
+                    <input className="p-1 ml-2 rounded-lg w-2/3" />
+                  </div>
+                </>
+              )}
+              {mode === 2 && <div className="text-2xl">Content for mode 2</div>}
+              {mode === 3 && <div className="text-2xl">Content for mode 3</div>}
+            </div>
           </div>
         </div>
       </div>
