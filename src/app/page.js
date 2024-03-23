@@ -18,12 +18,16 @@ export default function Home() {
 
   // Define the image based on the mode
   let bgImage;
+  let theme;
   if (mode === 1) {
     bgImage = green;
+    theme = "groot";
   } else if (mode === 2) {
     bgImage = night;
+    theme = "cyberpunk";
   } else {
     bgImage = paris;
+    theme = "sunset";
   }
 
   return (
@@ -43,7 +47,9 @@ export default function Home() {
               }`}
               onClick={toggleMode}
             >
-              <button className="p-1 bg-white text-black rounded">theme</button>
+              <button className="p-1 bg-white text-black rounded">
+                {theme}
+              </button>
             </div>
           </div>{" "}
           <div className="flex items-center justify-center text-white flex-col w-full">
