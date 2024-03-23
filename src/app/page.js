@@ -13,15 +13,15 @@ export default function Home() {
       <div className="absolute inset-0 ">
         <div className="flex items-center justify-center text-center text-white flex-col w-full">
           <div className="pt-10 text-9xl  font-custom">Flames</div>
-          <div className="flex items-center justify-center font-aesth text-lg pt-10 font-semibold w-full flex-col space-y-5">
-            <div className="flex flex-row w-full justify-center">
-              <p className="text-2xl ">Enter a name :</p>
-              <input className="p-1 ml-2 rounded-lg w-1/6" />
+          <div className="flex items-center justify-center font-aesth text-lg pt-10 font-semibold w-1/3 flex-col space-y-5 bg-green-100 bg-opacity-50 rounded-lg p-5">
+            <div className="flex flex-row w-full justify-center ">
+              <p className="text-2xl ">Enter name 1:</p>
+              <input className="p-1 ml-2 rounded-lg w-2/3" />
             </div>
-            <div className="flex flex-row w-full justify-center">
+            <div className="flex flex-row w-full justify-center ">
               {" "}
-              <p className="text-2xl ">Enter another name :</p>
-              <input className="p-1 ml-2 rounded-lg w-1/6" />
+              <p className="text-2xl ">Enter name 2:</p>
+              <input className="p-1 ml-2 rounded-lg w-2/3" />
             </div>
           </div>
         </div>
