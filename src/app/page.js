@@ -26,7 +26,6 @@ export default function Home() {
         <div className="flex items-center justify-center text-center text-white flex-col w-full">
           <div className="pt-10 text-9xl font-custom">Flames</div>
           <div className="flex justify-end">
-            {/* Your custom toggle button */}
             <div
               className={`custom-toggle ${
                 mode === 1 ? "mode1" : mode === 2 ? "mode2" : "mode3"
