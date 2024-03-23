@@ -47,7 +47,7 @@ export default function Home() {
               }`}
               onClick={toggleMode}
             >
-              <button className="p-1 bg-white text-black rounded">
+              <button className="p-1 bg-white bg-opacity-50 text-black rounded">
                 {theme}
               </button>
             </div>
