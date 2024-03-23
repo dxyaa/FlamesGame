@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "modern";
+  src: url("../../public/assets/ModernScript-yyWe.ttf");
+}
+.fontcomp {
+  font-family: "modern";
+}
 .blur {
   filter: blur(1px);
 }

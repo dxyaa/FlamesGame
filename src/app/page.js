@@ -12,7 +12,7 @@ export default function Home() {
       </div>
       <div className="absolute inset-0 ">
         <div className="flex items-center justify-center text-center text-white">
-          <div className="pt-10 text-4xl font-bold">Flames!</div>
+          <div className="pt-10 text-4xl  font-comp">Flames!</div>
         </div>
       </div>
     </div>
