@@ -117,7 +117,7 @@ export default function Home() {
     // let ind = count;
     let p;
     let ind = count;
-    for (let j = 0; j < 6; j++) {
+    for (let j = 0; j < 5; j++) {
       p = iteratorRef.current.getCharacterAt(ind, word);
       console.log("p : ", p);
       word = word.replace(p, "");

@@ -9,7 +9,10 @@ class CircularIterator {
     console.log("length in circular : ", length);
     console.log("string: ", str);
     console.log("index in circular : ", index);
-    const newIndex = (this.lastIndex + index - 1) % 6;
+    let newIndex = (this.lastIndex + index - 1) % 6;
+    if (newIndex >= length) {
+      newIndex = newIndex - length;
+    }
     console.log("newind : ", newIndex);
     this.lastIndex = newIndex;
     return str[newIndex];
