@@ -31,6 +31,7 @@ export default function Home() {
   const [name1, setName1] = useState("");
   const [name2, setName2] = useState("");
   const [count, setCount] = useState(0);
+
   const compareNames = () => {
     let count = 0;
     let temp;
@@ -39,26 +40,21 @@ export default function Home() {
     console.log("shorterName : ", shorterName);
     console.log("longerName : ", longerName);
     for (let i = 0; i < shorterName.length; i++) {
+      console.log("i: ", i);
+      console.log("shorterName inside for: ", shorterName);
+      console.log("longerName inside for: ", longerName);
+      console.log("shortername[i] inside for : ", shorterName[i]);
       if (longerName.includes(shorterName[i])) {
-        console.log("shortername[i]", shorterName[i]);
+        console.log("shortername[i] inside if : ", shorterName[i]);
         // count++;
         temp = shorterName[i];
-        longerName = longerName.replace(shorterName[i], "");
-        shorterName = shorterName.replace(temp, "");
-        for (let j = 0; j < longerName.length; j++) {
-          if (longerName[j] == temp) {
-            longerName = longerName.replace(shorterName[i], "");
-          }
-        }
-        for (let k = 0; k < shorterName.length; k++) {
-          if (shorterName[j] == temp) {
-            shorterName = shorterName.replace(temp, "");
-          }
-        }
+        longerName = longerName.replace(new RegExp(temp, "g"), "");
+        shorterName = shorterName.replace(new RegExp(temp, "g"), "");
+        i--;
       }
     }
-    console.log("shorterName : ", shorterName);
-    console.log("longerName : ", longerName);
+    console.log("shorterName last: ", shorterName);
+    console.log("longerName last: ", longerName);
     count =
       shorterName.replace(/\s/g, "").length +
       longerName.replace(/\s/g, "").length;
@@ -66,6 +62,20 @@ export default function Home() {
     // /count += Math.abs(name1.length - name2.length);
     setCount(count);
   };
+  /*const compareNames = () => {
+    let count = 0;
+    let temp1 = [];
+    let temp2 = [];
+    let shorterName = name1.length < name2.length ? name1 : name2;
+    let longerName = name1.length < name2.length ? name2 : name1;
+    console.log("shorterName : ", shorterName);
+    let i = 0;
+    for (let i = 0; i < shorterName.length; i++) {
+      if (!longerName.includes(shorterName[i])) {
+        temp1[i] = shorterName[i];
+      }
+    }
+  };*/
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-1 items-center justify-center relative">
