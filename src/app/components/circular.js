@@ -2,6 +2,7 @@ class CircularIterator {
   constructor(str) {
     this.str = str;
     this.lastIndex = 0;
+    this.first = 0;
   }
 
   getCharacterAt(index, str) {
@@ -9,7 +10,14 @@ class CircularIterator {
     console.log("length in circular : ", length);
     console.log("string: ", str);
     console.log("index in circular : ", index);
-    let newIndex = (this.lastIndex + index - 1) % 6;
+    let newIndex;
+    if (this.first == 0) {
+      newIndex = (this.lastIndex + index - 1) % 6;
+      this.first = 1;
+    } else {
+      newIndex = (this.lastIndex + index) % 6;
+    }
+
     if (newIndex >= length) {
       newIndex = newIndex - length;
     }
