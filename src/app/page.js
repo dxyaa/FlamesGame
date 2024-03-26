@@ -4,6 +4,8 @@ import Image from "next/image";
 import green from "../../public/images/green.jpg";
 import night from "../../public/images/night.jpg";
 import paris from "../../public/images/paris.jpg";
+import CircularIterator from "./components/circular";
+import { useRef } from "react";
 
 export default function Home() {
   const [mode, setMode] = useState(1);
@@ -32,6 +34,8 @@ export default function Home() {
   const [name2, setName2] = useState("");
   const [count, setCount] = useState(0);
   const [result, setResult] = useState("");
+
+  const iteratorRef = useRef(new CircularIterator(""));
 
   const compareNames = () => {
     let count = 0;
@@ -64,34 +68,14 @@ export default function Home() {
 
     // /count += Math.abs(name1.length - name2.length);
     setCount(count);
-    let y = 6;
+    //ITERATION
 
+    /* let y = 6;
     let letter;
     while (y > 1) {
       const x = count % y;
       console.log("x:", x);
-      /* switch (x) {
-        case 1:
-          letter = "F";
-          break;
-        case 2:
-          letter = "L";
-          break;
-        case 3:
-          letter = "A";
-          break;
-        case 4:
-          letter = "M";
-          break;
-        case 5:
-          letter = "E";
-          break;
-        case 0:
-          letter = "S";
-          break;
-        default:
-          console.log("error");
-      }*/
+     
       //if (flames.includes(letter)) {
       flames = flames.replace(flames[x], "");
       //  }
@@ -124,27 +108,19 @@ export default function Home() {
         vari = "Error";
     }
 
-    setResult(vari);
+    setResult(vari);*/
   };
-
-  /*for(let j=0;j<6;j++){
-
-  }*/
-  /*const compareNames = () => {
-    let count = 0;
-    let temp1 = [];
-    let temp2 = [];
-    let shorterName = name1.length < name2.length ? name1 : name2;
-    let longerName = name1.length < name2.length ? name2 : name1;
-    console.log("shorterName : ", shorterName);
-    let i = 0;
-    for (let i = 0; i < shorterName.length; i++) {
-      if (!longerName.includes(shorterName[i])) {
-        temp1[i] = shorterName[i];
-      }
+  const word = "FLAMES";
+  index = count;
+  let p;
+  const getCharacterAt = (index) => {
+    for (let j = 0; i < 6; j++) {
+      p = iteratorRef.current.getCharacterAt(index);
+      word = word.replace(word[p], "");
+      word.replace(/\s/g, "");
+      console.log("word: ", word);
     }
-  };*/
-
+  };
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-1 items-center justify-center relative">
