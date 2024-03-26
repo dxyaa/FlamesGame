@@ -1,14 +1,14 @@
 class CircularIterator {
-  constructor(string) {
-    this.string = string;
+  constructor(str) {
+    this.str = str;
     this.lastIndex = 0;
   }
 
-  getCharacterAt(index) {
-    const length = this.string.length;
+  getCharacterAt(index, str) {
+    const length = this.str.length;
     const newIndex = (this.lastIndex + index) % length;
     this.lastIndex = newIndex;
-    return this.string[newIndex];
+    return this.str[newIndex];
   }
 }
 

@@ -109,13 +109,17 @@ export default function Home() {
     }
 
     setResult(vari);*/
+    getCharacterAt(count);
   };
-  let word = "FLAMES";
-  let index = count;
-  let p;
-  const getCharacterAt = (index) => {
+
+  const getCharacterAt = (count) => {
+    let word = "FLAMES";
+    // let ind = count;
+    let p;
+    let ind = count % 6;
     for (let j = 0; j < 6; j++) {
-      p = iteratorRef.current.getCharacterAt(index);
+      p = iteratorRef.current.getCharacterAt(ind, word);
+      console.log("p : ", p);
       word = word.replace(word[p], "");
       word.replace(/\s/g, "");
       console.log("word: ", word);
