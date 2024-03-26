@@ -35,6 +35,7 @@ export default function Home() {
   const compareNames = () => {
     let count = 0;
     let temp;
+    let flames = "FLAMES";
     let shorterName = name1.length < name2.length ? name1 : name2;
     let longerName = name1.length < name2.length ? name2 : name1;
     console.log("shorterName : ", shorterName);
@@ -62,6 +63,9 @@ export default function Home() {
     // /count += Math.abs(name1.length - name2.length);
     setCount(count);
   };
+  /*for(let j=0;j<6;j++){
+
+  }*/
   /*const compareNames = () => {
     let count = 0;
     let temp1 = [];
@@ -76,6 +80,25 @@ export default function Home() {
       }
     }
   };*/
+  function flamesGame(x) {
+    let word = "flames";
+
+    // Convert x to 0-based index
+    x = (x - 1) % word.length;
+
+    while (word.length > 1) {
+      // Log the current state of the word
+      console.log(word);
+
+      // Remove the x-th letter from the word
+      word = word.substring(0, x) + "_" + word.substring(x + 1);
+
+      // Find the index of the next letter to be removed
+      x = (x + 1) % word.length;
+    }
+
+    return word;
+  }
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-1 items-center justify-center relative">
@@ -136,6 +159,7 @@ export default function Home() {
                   <p className="text-2xl">
                     Number of dissimilar letters: {count}
                   </p>
+                  <p>FLAMES :{flamesGame(count)}</p>
                 </div>
               )}
             </div>
