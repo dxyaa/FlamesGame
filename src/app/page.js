@@ -110,15 +110,40 @@ export default function Home() {
 
     setResult(vari);*/
   };
-  const word = "FLAMES";
-  index = count;
+  let word = "FLAMES";
+  let index = count;
   let p;
   const getCharacterAt = (index) => {
-    for (let j = 0; i < 6; j++) {
+    for (let j = 0; j < 6; j++) {
       p = iteratorRef.current.getCharacterAt(index);
       word = word.replace(word[p], "");
       word.replace(/\s/g, "");
       console.log("word: ", word);
+      let vari;
+      switch (word) {
+        case "F":
+          vari = "FRIENDS";
+          break;
+        case "L":
+          vari = "LOVERS";
+          break;
+        case "A":
+          vari = "AFFECTION";
+          break;
+        case "M":
+          vari = "MARRIAGE";
+          break;
+        case "E":
+          vari = "ENEMIES";
+          break;
+        case "S":
+          vari = "SIBLINGS";
+          break;
+        default:
+          vari = "Error";
+      }
+
+      setResult(vari);
     }
   };
   return (
