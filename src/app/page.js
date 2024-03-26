@@ -16,7 +16,6 @@ export default function Home() {
     });
   };
 
-  // Define the image based on the mode
   let bgImage;
   let theme;
   if (mode === 1) {
@@ -31,6 +30,32 @@ export default function Home() {
   }
   const [name1, setName1] = useState("");
   const [name2, setName2] = useState("");
+  const [count, setCount] = useState(0);
+  const compareNames = () => {
+    let count = 0;
+    let temp;
+    let shorterName = name1.length < name2.length ? name1 : name2;
+    let longerName = name1.length < name2.length ? name2 : name1;
+    console.log("shorterName : ", shorterName);
+    console.log("longerName : ", longerName);
+    for (let i = 0; i < shorterName.length; i++) {
+      if (longerName.includes(shorterName[i])) {
+        console.log("shortername[i]", shorterName[i]);
+        // count++;
+        temp = shorterName[i];
+        longerName = longerName.replace(shorterName[i], "");
+        shorterName = shorterName.replace(temp, ""); // Remove similar letters from longerName
+      }
+    }
+    console.log("shorterName : ", shorterName);
+    console.log("longerName : ", longerName);
+    count =
+      shorterName.replace(/\s/g, "").length +
+      longerName.replace(/\s/g, "").length;
+    // Add the difference in lengths to count (if any)
+    // /count += Math.abs(name1.length - name2.length);
+    setCount(count);
+  };
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-1 items-center justify-center relative">
@@ -82,6 +107,15 @@ export default function Home() {
                 <div>
                   <p className="text-2xl">Name 1: {name1}</p>
                   <p className="text-2xl">Name 2: {name2}</p>
+                  <button
+                    className="bg-blue-500 text-white font-semibold py-2 px-4 rounded"
+                    onClick={compareNames}
+                  >
+                    Compare Names
+                  </button>
+                  <p className="text-2xl">
+                    Number of dissimilar letters: {count}
+                  </p>
                 </div>
               )}
             </div>
