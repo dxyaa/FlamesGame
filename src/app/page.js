@@ -31,11 +31,13 @@ export default function Home() {
   const [name1, setName1] = useState("");
   const [name2, setName2] = useState("");
   const [count, setCount] = useState(0);
+  const [result, setResult] = useState("");
 
   const compareNames = () => {
     let count = 0;
     let temp;
     let flames = "FLAMES";
+
     let shorterName = name1.length < name2.length ? name1 : name2;
     let longerName = name1.length < name2.length ? name2 : name1;
     console.log("shorterName : ", shorterName);
@@ -62,7 +64,64 @@ export default function Home() {
 
     // /count += Math.abs(name1.length - name2.length);
     setCount(count);
+    const x = count % 6;
+    let letter;
+    while (flames.length > 1) {
+      switch (x) {
+        case 1:
+          letter = "F";
+          break;
+        case 2:
+          letter = "L";
+          break;
+        case 3:
+          letter = "A";
+          break;
+        case 4:
+          letter = "M";
+          break;
+        case 5:
+          letter = "E";
+          break;
+        case 0:
+          letter = "S";
+          break;
+        default:
+          console.log("error");
+      }
+      if (flames.includes(letter)) {
+        flames = flames.replace(new RegExp(letter, "g"), "");
+      }
+      flames.replace(/\s/g, "");
+      console.log(flames);
+    }
+    let vari;
+    switch (flames) {
+      case "F":
+        vari = "FRIENDS";
+        break;
+      case "L":
+        vari = "LOVERS";
+        break;
+      case "A":
+        vari = "AFFECTION";
+        break;
+      case "M":
+        vari = "MARRIAGE";
+        break;
+      case "E":
+        vari = "ENEMIES";
+        break;
+      case "S":
+        vari = "SIBLINGS";
+        break;
+      default:
+        vari = "Error";
+    }
+
+    setResult(vari);
   };
+
   /*for(let j=0;j<6;j++){
 
   }*/
@@ -80,25 +139,7 @@ export default function Home() {
       }
     }
   };*/
-  function flamesGame(x) {
-    let word = "flames";
 
-    // Convert x to 0-based index
-    x = (x - 1) % word.length;
-
-    while (word.length > 1) {
-      // Log the current state of the word
-      console.log(word);
-
-      // Remove the x-th letter from the word
-      word = word.substring(0, x) + "_" + word.substring(x + 1);
-
-      // Find the index of the next letter to be removed
-      x = (x + 1) % word.length;
-    }
-
-    return word;
-  }
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-1 items-center justify-center relative">
@@ -159,7 +200,7 @@ export default function Home() {
                   <p className="text-2xl">
                     Number of dissimilar letters: {count}
                   </p>
-                  <p>FLAMES :{flamesGame(count)}</p>
+                  <p className="text-2xl">r: {result}</p>
                 </div>
               )}
             </div>
