@@ -29,7 +29,8 @@ export default function Home() {
     bgImage = paris;
     theme = "sunset";
   }
-
+  const [name1, setName1] = useState("");
+  const [name2, setName2] = useState("");
   return (
     <div className="flex flex-col h-screen">
       <div className="flex flex-1 items-center justify-center relative">
@@ -59,16 +60,30 @@ export default function Home() {
                 <>
                   <div className="flex flex-row w-full justify-center">
                     <p className="text-2xl">Enter name 1:</p>
-                    <input className="p-1 ml-2 rounded-lg w-2/3" />
+                    <input
+                      onChange={(e) => setName1(e.target.value)}
+                      value={name1}
+                      className="p-1 ml-2 rounded-lg w-2/3 text-black"
+                    />
                   </div>
                   <div className="flex flex-row w-full justify-center">
                     <p className="text-2xl">Enter name 2:</p>
-                    <input className="p-1 ml-2 rounded-lg w-2/3" />
+                    <input
+                      value={name2}
+                      onChange={(e) => setName2(e.target.value)}
+                      className="p-1 ml-2 rounded-lg w-2/3 text-black"
+                    />
                   </div>
                 </>
               )}
               {mode === 2 && <div className="text-2xl">Content for mode 2</div>}
               {mode === 3 && <div className="text-2xl">Content for mode 3</div>}
+              {mode === 1 && name1 && name2 && (
+                <div>
+                  <p className="text-2xl">Name 1: {name1}</p>
+                  <p className="text-2xl">Name 2: {name2}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
