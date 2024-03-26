@@ -116,39 +116,39 @@ export default function Home() {
     let word = "FLAMES";
     // let ind = count;
     let p;
-    let ind = count % 6;
+    let ind = count;
     for (let j = 0; j < 6; j++) {
       p = iteratorRef.current.getCharacterAt(ind, word);
       console.log("p : ", p);
-      word = word.replace(word[p], "");
+      word = word.replace(p, "");
       word.replace(/\s/g, "");
       console.log("word: ", word);
-      let vari;
-      switch (word) {
-        case "F":
-          vari = "FRIENDS";
-          break;
-        case "L":
-          vari = "LOVERS";
-          break;
-        case "A":
-          vari = "AFFECTION";
-          break;
-        case "M":
-          vari = "MARRIAGE";
-          break;
-        case "E":
-          vari = "ENEMIES";
-          break;
-        case "S":
-          vari = "SIBLINGS";
-          break;
-        default:
-          vari = "Error";
-      }
-
-      setResult(vari);
     }
+    let vari;
+    switch (word) {
+      case "F":
+        vari = "FRIENDS";
+        break;
+      case "L":
+        vari = "LOVERS";
+        break;
+      case "A":
+        vari = "AFFECTION";
+        break;
+      case "M":
+        vari = "MARRIAGE";
+        break;
+      case "E":
+        vari = "ENEMIES";
+        break;
+      case "S":
+        vari = "SIBLINGS";
+        break;
+      default:
+        vari = "Error";
+    }
+
+    setResult(vari);
   };
   return (
     <div className="flex flex-col h-screen">
