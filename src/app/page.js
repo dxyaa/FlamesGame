@@ -44,7 +44,17 @@ export default function Home() {
         // count++;
         temp = shorterName[i];
         longerName = longerName.replace(shorterName[i], "");
-        shorterName = shorterName.replace(temp, ""); // Remove similar letters from longerName
+        shorterName = shorterName.replace(temp, "");
+        for (let j = 0; j < longerName.length; j++) {
+          if (longerName[j] == temp) {
+            longerName = longerName.replace(shorterName[i], "");
+          }
+        }
+        for (let k = 0; k < shorterName.length; k++) {
+          if (shorterName[j] == temp) {
+            shorterName = shorterName.replace(temp, "");
+          }
+        }
       }
     }
     console.log("shorterName : ", shorterName);
@@ -52,7 +62,7 @@ export default function Home() {
     count =
       shorterName.replace(/\s/g, "").length +
       longerName.replace(/\s/g, "").length;
-    // Add the difference in lengths to count (if any)
+
     // /count += Math.abs(name1.length - name2.length);
     setCount(count);
   };
