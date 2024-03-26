@@ -17,7 +17,7 @@ class CircularIterator {
     } else {
       newIndex = (this.lastIndex + index) % 6;
     }
-
+    //find out exactly which letter and when
     if (newIndex >= length) {
       newIndex = newIndex - length;
     }
