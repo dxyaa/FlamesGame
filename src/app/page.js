@@ -64,10 +64,13 @@ export default function Home() {
 
     // /count += Math.abs(name1.length - name2.length);
     setCount(count);
-    const x = count % 6;
+    let y = 6;
+
     let letter;
-    while (flames.length > 1) {
-      switch (x) {
+    while (y > 1) {
+      const x = count % y;
+      console.log("x:", x);
+      /* switch (x) {
         case 1:
           letter = "F";
           break;
@@ -88,12 +91,14 @@ export default function Home() {
           break;
         default:
           console.log("error");
-      }
-      if (flames.includes(letter)) {
-        flames = flames.replace(new RegExp(letter, "g"), "");
-      }
+      }*/
+      //if (flames.includes(letter)) {
+      flames = flames.replace(flames[x], "");
+      //  }
       flames.replace(/\s/g, "");
-      console.log(flames);
+      console.log("flames: ", flames);
+      y--;
+      console.log("y  :", y);
     }
     let vari;
     switch (flames) {
