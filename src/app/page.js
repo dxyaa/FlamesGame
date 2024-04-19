@@ -265,7 +265,7 @@ export default function Home() {
                   {/* <p className="text-2xl">
                     Number of dissimilar letters: {count}
                 </p>*/}
-                  <p className="text-2xl">r: {result}</p>
+                  <p className="text-2xl pt-4">{result}!!</p>
                 </div>
               )}
               {mode === 2 && name1 && name2 && (
@@ -281,7 +281,7 @@ export default function Home() {
                   {/* <p className="text-2xl">
                     Number of dissimilar letters: {count}
                 </p>*/}
-                  <p className="text-2xl">r: {result}</p>
+                  <p className="text-2xl pt-4">{result}!!</p>
                 </div>
               )}
               {mode === 3 && name1 && name2 && (
@@ -297,7 +297,7 @@ export default function Home() {
                   {/* <p className="text-2xl">
                     Number of dissimilar letters: {count}
                 </p>*/}
-                  <p className="text-2xl">{result}!!</p>
+                  <p className="text-2xl pt-4">{result}!!</p>
                 </div>
               )}
             </div>
