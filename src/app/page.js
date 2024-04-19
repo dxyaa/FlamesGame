@@ -44,15 +44,15 @@ export default function Home() {
 
     let shorterName = name1.length < name2.length ? name1 : name2;
     let longerName = name1.length < name2.length ? name2 : name1;
-    console.log("shorterName : ", shorterName);
-    console.log("longerName : ", longerName);
+    //console.log("shorterName : ", shorterName);
+    //console.log("longerName : ", longerName);
     for (let i = 0; i < shorterName.length; i++) {
-      console.log("i: ", i);
-      console.log("shorterName inside for: ", shorterName);
-      console.log("longerName inside for: ", longerName);
-      console.log("shortername[i] inside for : ", shorterName[i]);
+      // console.log("i: ", i);
+      //console.log("shorterName inside for: ", shorterName);
+      //console.log("longerName inside for: ", longerName);
+      //console.log("shortername[i] inside for : ", shorterName[i]);
       if (longerName.includes(shorterName[i])) {
-        console.log("shortername[i] inside if : ", shorterName[i]);
+        //console.log("shortername[i] inside if : ", shorterName[i]);
         // count++;
         temp = shorterName[i];
         longerName = longerName.replace(new RegExp(temp, "g"), "");
@@ -60,8 +60,8 @@ export default function Home() {
         i--;
       }
     }
-    console.log("shorterName last: ", shorterName);
-    console.log("longerName last: ", longerName);
+    // console.log("shorterName last: ", shorterName);
+    //console.log("longerName last: ", longerName);
     count =
       shorterName.replace(/\s/g, "").length +
       longerName.replace(/\s/g, "").length;
@@ -117,7 +117,23 @@ export default function Home() {
     // let ind = count;
     let p;
     let ind = count;
-    for (let j = 0; j < 5; j++) {
+    //console.log(count);
+    let q = 5;
+    for (let j = 0; j < q; j++) {
+      /*if (ind < q + 1 - j) {
+        console.log("delimit value : ", q + 1 - j);
+        word = word.replace(word[ind - 1], "");
+
+        word.replace(/\s/g, "");
+        console.log("word : ", word);
+      } else {
+        ind = ind % 6;
+        word = word.replace(word[ind - 1], "");
+
+        word.replace(/\s/g, "");
+        console.log("word : ", word);
+      }
+      word[co];*/
       p = iteratorRef.current.getCharacterAt(ind, word);
       console.log("p : ", p);
       word = word.replace(p, "");
