@@ -5,7 +5,7 @@ import green from "../../public/images/green.jpg";
 import night from "../../public/images/night.jpg";
 import paris from "../../public/images/paris.jpg";
 import CircularIterator from "./components/circular";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
   const [mode, setMode] = useState(1);
@@ -212,8 +212,46 @@ export default function Home() {
                   </div>
                 </>
               )}
-              {mode === 2 && <div className="text-2xl">Content for mode 2</div>}
-              {mode === 3 && <div className="text-2xl">Content for mode 3</div>}
+              {mode === 2 && (
+                <>
+                  <div className="flex flex-row w-full justify-center">
+                    <p className="text-2xl">Enter name 1:</p>
+                    <input
+                      onChange={(e) => setName1(e.target.value)}
+                      value={name1}
+                      className="p-1 ml-2 rounded-lg w-2/3 text-black"
+                    />
+                  </div>
+                  <div className="flex flex-row w-full justify-center">
+                    <p className="text-2xl">Enter name 2:</p>
+                    <input
+                      value={name2}
+                      onChange={(e) => setName2(e.target.value)}
+                      className="p-1 ml-2 rounded-lg w-2/3 text-black"
+                    />
+                  </div>
+                </>
+              )}
+              {mode === 3 && (
+                <>
+                  <div className="flex flex-row w-full justify-center">
+                    <p className="text-2xl">Enter name 1:</p>
+                    <input
+                      onChange={(e) => setName1(e.target.value)}
+                      value={name1}
+                      className="p-1 ml-2 rounded-lg w-2/3 text-black"
+                    />
+                  </div>
+                  <div className="flex flex-row w-full justify-center">
+                    <p className="text-2xl">Enter name 2:</p>
+                    <input
+                      value={name2}
+                      onChange={(e) => setName2(e.target.value)}
+                      className="p-1 ml-2 rounded-lg w-2/3 text-black"
+                    />
+                  </div>
+                </>
+              )}
               {mode === 1 && name1 && name2 && (
                 <div>
                   {/* <p className="text-2xl">Name 1: {name1}</p>
@@ -228,6 +266,38 @@ export default function Home() {
                     Number of dissimilar letters: {count}
                 </p>*/}
                   <p className="text-2xl">r: {result}</p>
+                </div>
+              )}
+              {mode === 2 && name1 && name2 && (
+                <div>
+                  {/* <p className="text-2xl">Name 1: {name1}</p>
+                  <p className="text-2xl">Name 2: {name2}</p>*/}
+                  <button
+                    className="bg-blue-500 text-white font-semibold py-2 px-4 rounded"
+                    onClick={compareNames}
+                  >
+                    Compare Names
+                  </button>
+                  {/* <p className="text-2xl">
+                    Number of dissimilar letters: {count}
+                </p>*/}
+                  <p className="text-2xl">r: {result}</p>
+                </div>
+              )}
+              {mode === 3 && name1 && name2 && (
+                <div>
+                  {/* <p className="text-2xl">Name 1: {name1}</p>
+                  <p className="text-2xl">Name 2: {name2}</p>*/}
+                  <button
+                    className="bg-blue-500 text-white font-semibold py-2 px-4 rounded"
+                    onClick={compareNames}
+                  >
+                    Compare Names
+                  </button>
+                  {/* <p className="text-2xl">
+                    Number of dissimilar letters: {count}
+                </p>*/}
+                  <p className="text-2xl">{result}!!</p>
                 </div>
               )}
             </div>
