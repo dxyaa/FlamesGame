@@ -113,6 +113,7 @@ export default function Home() {
   };
 
   const getCharacterAt = (count) => {
+    iteratorRef.current.resetFirst();
     let word = "FLAMES";
     // let ind = count;
     let p;
@@ -215,17 +216,17 @@ export default function Home() {
               {mode === 3 && <div className="text-2xl">Content for mode 3</div>}
               {mode === 1 && name1 && name2 && (
                 <div>
-                  <p className="text-2xl">Name 1: {name1}</p>
-                  <p className="text-2xl">Name 2: {name2}</p>
+                  {/* <p className="text-2xl">Name 1: {name1}</p>
+                  <p className="text-2xl">Name 2: {name2}</p>*/}
                   <button
                     className="bg-blue-500 text-white font-semibold py-2 px-4 rounded"
                     onClick={compareNames}
                   >
                     Compare Names
                   </button>
-                  <p className="text-2xl">
+                  {/* <p className="text-2xl">
                     Number of dissimilar letters: {count}
-                  </p>
+                </p>*/}
                   <p className="text-2xl">r: {result}</p>
                 </div>
               )}
