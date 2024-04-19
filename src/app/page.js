@@ -165,7 +165,7 @@ export default function Home() {
         vari = "Error";
     }
 
-    setResult(vari);
+    setResult(vari, "!");
   };
   return (
     <div className="flex flex-col h-screen">
@@ -257,7 +257,7 @@ export default function Home() {
                   {/* <p className="text-2xl">Name 1: {name1}</p>
                   <p className="text-2xl">Name 2: {name2}</p>*/}
                   <button
-                    className="bg-blue-500 text-white font-semibold py-2 px-4 rounded"
+                    className="bg-green-700 text-white font-semibold py-2 px-4 rounded"
                     onClick={compareNames}
                   >
                     Compare Names
@@ -265,7 +265,7 @@ export default function Home() {
                   {/* <p className="text-2xl">
                     Number of dissimilar letters: {count}
                 </p>*/}
-                  <p className="text-2xl pt-4">{result}!!</p>
+                  <p className="text-2xl pt-4 ">{result}</p>
                 </div>
               )}
               {mode === 2 && name1 && name2 && (
@@ -273,7 +273,7 @@ export default function Home() {
                   {/* <p className="text-2xl">Name 1: {name1}</p>
                   <p className="text-2xl">Name 2: {name2}</p>*/}
                   <button
-                    className="bg-blue-500 text-white font-semibold py-2 px-4 rounded"
+                    className="bg-indigo-600 text-white font-semibold py-2 px-4 rounded"
                     onClick={compareNames}
                   >
                     Compare Names
@@ -281,7 +281,7 @@ export default function Home() {
                   {/* <p className="text-2xl">
                     Number of dissimilar letters: {count}
                 </p>*/}
-                  <p className="text-2xl pt-4">{result}!!</p>
+                  <p className="text-2xl pt-4">{result}</p>
                 </div>
               )}
               {mode === 3 && name1 && name2 && (
@@ -289,7 +289,7 @@ export default function Home() {
                   {/* <p className="text-2xl">Name 1: {name1}</p>
                   <p className="text-2xl">Name 2: {name2}</p>*/}
                   <button
-                    className="bg-blue-500 text-white font-semibold py-2 px-4 rounded"
+                    className="bg-orange-700 text-white font-semibold py-2 px-4 rounded"
                     onClick={compareNames}
                   >
                     Compare Names
@@ -297,7 +297,7 @@ export default function Home() {
                   {/* <p className="text-2xl">
                     Number of dissimilar letters: {count}
                 </p>*/}
-                  <p className="text-2xl pt-4">{result}!!</p>
+                  <p className="text-2xl pt-4">{result}</p>
                 </div>
               )}
             </div>
